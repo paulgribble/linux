@@ -1,3 +1,5 @@
+#!/bin/sh
+
 sudo apt-get install emacs texlive-full texlive-fonts-extra cm-super texlive-latex-extra auctex r-base ess python-scipy python-numpy python-matplotlib ipython git ntp build-essential libgsl0-dev plotutils gnuplot ssh gtk2-engines-pixbuf python-gpgme selinux octave
 
 sudo texconfig paper letter
