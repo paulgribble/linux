@@ -1,0 +1,31 @@
+;; org-mode
+(require 'org-install)
+(require 'org-latex)
+
+;; active Babel languages
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((sh . t)
+  (R . t)
+  (python . t)
+  (C . t)
+  ))
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-cc" 'org-capture)
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cb" 'org-iswitchb)
+(defun my-org-confirm-babel-evaluate (lang body)
+           (not (string= lang "R")))  ; don't ask for R
+(setq org-confirm-babel-evaluate 'my-org-confirm-babel-evaluate)
+
+;; csv-mode
+(add-to-list 'auto-mode-alist '("\\.[Cc][Ss][Vv]\\'" . csv-mode))
+(autoload 'csv-mode "csv-mode"
+ "Major mode for editing comma-separated value files." t)
+
+;; AUCTeX
+(require 'tex-site)
+(setq TeX-auto-save t)
+(setq TeX-parse-self t)
+(setq-default TeX-master nil)
+
