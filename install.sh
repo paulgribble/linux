@@ -26,5 +26,7 @@ sudo add-apt-repository ppa:zedtux/naturalscrolling
 sudo apt-get update
 sudo apt-get install naturalscrolling
 
+sudo apt-get install ttf-mscorefonts-installer
+
 echo "done"
 
