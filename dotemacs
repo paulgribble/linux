@@ -1,6 +1,7 @@
 ;; org-mode
 (require 'org-install)
 (require 'org-latex)
+(require 'htmlize)
 
 ;; active Babel languages
 (org-babel-do-load-languages
