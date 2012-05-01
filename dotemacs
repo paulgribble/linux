@@ -1,3 +1,6 @@
+;; emacs local site-lisp
+(setq load-path (cons "/usr/local/share/emacs/site-lisp" load-path))
+
 ;; org-mode
 (require 'org-install)
 (require 'org-latex)
