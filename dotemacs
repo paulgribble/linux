@@ -4,7 +4,6 @@
 ;; wrap at window edge
 (setq line-move-visual t)
 
-
 ;; org-mode
 (require 'org-install)
 (require 'org-latex)
