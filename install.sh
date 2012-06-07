@@ -32,5 +32,8 @@ cp xmobarrc ~/.xmobarrc
 mkdir ~/.xmonad
 cp xmonad.hs ~/.xmonad/xmonad.hs
 
+sudo gem install mime
+sudo gem install ruby-gmail
+
 echo "done"
 
