@@ -28,6 +28,9 @@ sudo apt-get install naturalscrolling
 
 sudo apt-get install ttf-mscorefonts-installer
 
+cp xmobarrc ~/.xmobarrc
+mkdir ~/.xmonad
+cp xmonad.sh ~/.xmonad/xmonad.hs
 
 echo "done"
 
