@@ -4,7 +4,7 @@ sudo apt-get update
 
 sudo apt-get upgrade
 
-sudo apt-get install emacs emacs-goodies-el texlive-full texlive-fonts-extra cm-super texlive-latex-extra auctex r-base ess python-scipy python-numpy python-matplotlib python-setuptools ipython git ntp build-essential libgsl0-dev plotutils gnuplot ssh gtk2-engines-pixbuf python-gpgme selinux octave gnome-session ruby rubygems xmonad dmenu xmobar
+sudo apt-get install emacs emacs-goodies-el texlive-full texlive-fonts-extra cm-super texlive-latex-extra auctex r-base ess python-scipy python-numpy python-matplotlib python-setuptools ipython git ntp build-essential libgsl0-dev plotutils gnuplot ssh gtk2-engines-pixbuf python-gpgme selinux octave gnome-session ruby1.8.7 rubygems xmonad dmenu xmobar
 
 sudo texconfig paper letter
 
