@@ -30,7 +30,7 @@ sudo apt-get install ttf-mscorefonts-installer
 
 cp xmobarrc ~/.xmobarrc
 mkdir ~/.xmonad
-cp xmonad.sh ~/.xmonad/xmonad.hs
+cp xmonad.hs ~/.xmonad/xmonad.hs
 
 echo "done"
 
