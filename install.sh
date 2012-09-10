@@ -51,6 +51,7 @@ echo "installing LaTeX"
 sudo apt-get -qq install texlive-full texlive-fonts-extra cm-super texlive-latex-extra auctex
 sudo texconfig paper letter
 wget http://www.tug.org/fonts/getnonfreefonts/install-getnonfreefonts
+chmod +x install-getnonfreefonts
 sudo ./install-getnonfreefonts
 sudo getnonfreefonts garamond
 sudo apt-get -qq install ttf-mscorefonts-installer
