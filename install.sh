@@ -12,7 +12,7 @@ git config --global user.email paul@gribblelab.org
 
 # emacs
 echo "installing emacs"
-sudo apt-get -qq install emacs emacs-goodies-el
+sudo apt-get -qq install emacs emacs-goodies-el makeinfo
 
 # org-mode
 echo "installing emacs org-mode"
