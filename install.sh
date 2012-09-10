@@ -4,14 +4,18 @@ sudo apt-get update
 
 sudo apt-get upgrade
 
-sudo apt-get install emacs emacs-goodies-el texlive-full texlive-fonts-extra cm-super texlive-latex-extra auctex r-base ess python-scipy python-numpy python-matplotlib python-setuptools ipython git ntp build-essential libgsl0-dev plotutils gnuplot ssh gtk2-engines-pixbuf python-gpgme selinux octave gnome-session ruby rubygems xmonad dmenu xmobar xscreensaver sane
+sudo apt-get install emacs emacs-goodies-el texlive-full texlive-fonts-extra cm-super texlive-latex-extra
+sudo apt-get install auctex r-base ess
+sudo apt-get install python-scipy python-numpy python-matplotlib python-setuptools ipython
+sudo apt-get install git ntp build-essential libgsl0-dev plotutils gnuplot ssh gtk2-engines-pixbuf
+sudo apt-get install octave gnome-session ruby rubygems sane python-gpgme
+
+sudo apt-get install xmonad dmenu xmobar xscreensaver
 
 sudo texconfig paper letter
 
 git config --global user.name "Paul Gribble"
 git config --global user.email paul@gribblelab.org
-
-cp dotemacs ~/.emacs
 
 cd ..
 git clone git://orgmode.org/org-mode.git
@@ -25,6 +29,8 @@ cd ubuntu
 sudo add-apt-repository ppa:zedtux/naturalscrolling
 sudo apt-get update
 sudo apt-get install naturalscrolling
+
+cp dotemacs ~/.emacs
 
 sudo apt-get install ttf-mscorefonts-installer
 
