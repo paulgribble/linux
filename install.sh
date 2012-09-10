@@ -26,6 +26,7 @@ make doc
 sudo make install
 cd ..
 cd ubuntu
+cp dotemacs ~/.emacs
 
 
 # OTHER
@@ -33,8 +34,6 @@ cd ubuntu
 #sudo add-apt-repository ppa:zedtux/naturalscrolling
 #sudo apt-get update
 #sudo apt-get install naturalscrolling
-
-#cp dotemacs ~/.emacs
 
 #sudo apt-get install xmonad dmenu xmobar xscreensaver
 #cp xmobarrc ~/.xmobarrc
