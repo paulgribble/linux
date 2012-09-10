@@ -31,13 +31,8 @@ cd ubuntu
 cp dotemacs ~/.emacs
 
 # python scientific stack
-#sudo apt-get install python-scipy python-numpy python-matplotlib python-setuptools ipython
-#git clone git://gist.github.com/3433915.git
-git clone git://gist.github.com/3688478.git
-cd 3688478
-chmod +x install.sh
-./install.sh
-echo "export PATH=\$HOME/local/python/bin:\$PATH" >> ~/.bashrc
+sudo apt-get install python-numpy python-scipy python-matplotlib ipython ipython-doc ipython-notebook ipython-qtconsole python-virtualenv python-dev python-pip
+
 
 # OTHER
 
