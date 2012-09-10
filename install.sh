@@ -10,7 +10,6 @@ git config --global user.email paul@gribblelab.org
 sudo apt-get install emacs emacs-goodies-el
 
 sudo apt-get install auctex r-base ess
-#sudo apt-get install python-scipy python-numpy python-matplotlib python-setuptools ipython
 sudo apt-get install ntp build-essential libgsl0-dev plotutils gnuplot ssh gtk2-engines-pixbuf
 sudo apt-get install octave gnome-session ruby rubygems sane python-gpgme
 
@@ -31,6 +30,13 @@ cd ..
 cd ubuntu
 cp dotemacs ~/.emacs
 
+# python scientific stack
+#sudo apt-get install python-scipy python-numpy python-matplotlib python-setuptools ipython
+git clone git://gist.github.com/3433915.git
+cd 3433915
+chmod +x install.sh
+./install.sh
+echo "export PATH=\$HOME/local/python/bin:\$PATH" >> ~/.bashrc
 
 # OTHER
 
