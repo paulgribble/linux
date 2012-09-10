@@ -1,8 +1,8 @@
 #!/bin/sh
 
 echo "updating ubuntu"
-sudo apt-get update
-sudo apt-get upgrade
+sudo apt-get -qq update
+sudo apt-get -qq upgrade
 
 # git
 echo "installing git"
