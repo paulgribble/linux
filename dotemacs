@@ -9,30 +9,6 @@
 (require 'org-latex)
 (require 'htmlize)
 
-(require 'org-publish)
-(setq org-publish-project-alist
-      '(
- ("CBootCampLocal"
-	 :base-directory "~/Desktop/CBootCamp/org/"
-	 :base-extension "org"
-	 :publishing-directory "~/Desktop/CBootCamp/html"
-	 :publishing-function org-publish-org-to-html
-	 :recursive t
-	 :html-postamble "<hr />%a %d"
-	 :language en
-	 :link-home "index.html"
-	 :link-up "index.html"
-	 :style "<link rel=\"stylesheet\" type=\"text/css\" href=\"mystyle.css\" />"
-	 )
-	("CBootCampWeb"
-	 :base-directory "~/Desktop/CBootCamp/html/"
-	 :base-extension "css\\|html"
-	 :publishing-directory "/ssh:admin@leviathan.ssc.uwo.ca:~/gribblelab.org/CBootCamp/"
-	 :publishing-function org-publish-attachment
-	 :recursive t
-	 )
-	("org" :components ("CBootCampLocal" "CBootCampWeb"))))
-
 ;; active Babel languages
 (org-babel-do-load-languages
  'org-babel-load-languages
