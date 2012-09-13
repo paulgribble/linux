@@ -1,5 +1,5 @@
 ;; emacs local site-lisp
-(setq load-path (cons "/usr/local/share/emacs/site-lisp" load-path))
+(setq load-path (cons "/usr/share/emacs/site-lisp/org" load-path))
 
 ;; wrap at window edge
 (visual-line-mode t)
