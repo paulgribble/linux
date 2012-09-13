@@ -24,6 +24,7 @@ make doc
 sudo make install
 cd ..
 cd ubuntu
+sudo cp org-exp-bibtex.el /usr/share/emacs/site-lisp/
 cp dotemacs ~/.emacs
 
 # R
