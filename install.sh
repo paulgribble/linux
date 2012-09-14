@@ -25,6 +25,7 @@ sudo make install
 cd ..
 cd ubuntu
 sudo cp org-exp-bibtex.el /usr/share/emacs/site-lisp/
+sudo apt-get install bibtex2html
 cp dotemacs ~/.emacs
 
 # R
