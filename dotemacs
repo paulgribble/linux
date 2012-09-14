@@ -2,7 +2,7 @@
 (setq load-path (cons "/usr/share/emacs/site-lisp/org" load-path))
 
 ;; wrap at window edge
-(visual-line-mode t)
+(setq visual-line-mode t)
 
 ;; org-mode
 (require 'org-install)
