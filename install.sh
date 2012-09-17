@@ -28,6 +28,8 @@ sudo cp org-exp-bibtex.el /usr/share/emacs/site-lisp/
 sudo apt-get install bibtex2html
 cp dotemacs ~/.emacs
 
+# for mac: http://fly.srk.fer.hr/~hniksic/emacs/htmlize.el.cgi
+
 # R
 echo "installing R"
 sudo apt-get -qq install r-base ess
