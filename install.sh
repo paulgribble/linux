@@ -63,8 +63,8 @@ sudo apt-get -qq install ttf-mscorefonts-installer
 # python scientific stack
 echo "installing python scientific stack"
 sudo apt-get -qq install python-sip pyqt4-dev-tools
-sudo apt-get -qq install python-numpy python-scipy python-matplotlib ipython ipython-doc ipython-notebook ipython-qtconsole python-virtualenv python-dev python-pip
-
+sudo apt-get -qq install python-numpy python-scipy python-matplotlib ipython ipython-doc ipython-notebook ipython-qtconsole python-sympy python-virtualenv python-dev python-pip
+sudo apt-get -qq install python-pygame
 
 # OTHER
 
