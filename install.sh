@@ -60,6 +60,9 @@ sudo ./install-getnonfreefonts
 sudo getnonfreefonts garamond
 sudo apt-get -qq install ttf-mscorefonts-installer
 
+# Pandoc
+sudo apt-get install pandoc
+
 # python scientific stack
 echo "installing python scientific stack"
 sudo apt-get -qq install python-sip pyqt4-dev-tools
