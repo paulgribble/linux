@@ -12,3 +12,5 @@ sudo dpkg-reconfigure nvidia-current
 
 # for mac: http://fly.srk.fer.hr/~hniksic/emacs/htmlize.el.cgi
 
+sudo apt-get install indicator-cpufreq
+
