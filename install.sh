@@ -4,12 +4,6 @@ echo "updating ubuntu"
 sudo apt-get -qq update
 sudo apt-get -qq upgrade
 
-# could be needed for wireless esp on macs
-sudo apt-get install linux-firmware-nonfree
-
-# for macs fan control
-sudo apt-get install macfanctld
-
 # git
 echo "installing git"
 sudo apt-get -qq install git
