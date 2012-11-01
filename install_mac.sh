@@ -10,3 +10,5 @@ sudo apt-get install macfanctld
 sudo apt-get install nvidia-current
 sudo dpkg-reconfigure nvidia-current
 
+# for mac: http://fly.srk.fer.hr/~hniksic/emacs/htmlize.el.cgi
+
