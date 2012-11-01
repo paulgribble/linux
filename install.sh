@@ -52,10 +52,12 @@ sudo apt-get -qq install gnome-session sane ssh
 echo "installing LaTeX"
 sudo apt-get -qq install texlive-full texlive-fonts-extra cm-super texlive-latex-extra auctex
 sudo texconfig paper letter
+sudo mktexlsr
 wget http://www.tug.org/fonts/getnonfreefonts/install-getnonfreefonts
 chmod +x install-getnonfreefonts
 sudo ./install-getnonfreefonts
 sudo getnonfreefonts garamond
+sudo mktexlsr
 sudo apt-get -qq install ttf-mscorefonts-installer
 
 # Pandoc
