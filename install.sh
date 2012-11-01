@@ -69,6 +69,11 @@ sudo apt-get -qq install python-sip pyqt4-dev-tools
 sudo apt-get -qq install python-numpy python-scipy python-matplotlib ipython ipython-doc ipython-notebook ipython-qtconsole python-sympy python-virtualenv python-dev python-pip
 sudo apt-get -qq install python-pygame
 
+# update reps and upgrade any leftovers
+sudo apt-get update
+sudo apt-get upgrade
+
+
 # OTHER
 
 #sudo add-apt-repository ppa:zedtux/naturalscrolling
