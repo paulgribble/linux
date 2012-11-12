@@ -73,6 +73,8 @@ sudo apt-get -qq install python-pygame
 sudo apt-get update
 sudo apt-get upgrade
 
+# laptop?
+# sudo apt-get install laptop-mode-tools
 
 # OTHER
 
