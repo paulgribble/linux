@@ -14,3 +14,7 @@ sudo dpkg-reconfigure nvidia-current
 
 sudo apt-get install indicator-cpufreq
 
+# nvidia drivers?
+sudo apt-add-repository ppa:ubuntu-x-swat/x-updates
+sudo apt-get update
+sudo apt-get install nvidia-current nvidia-settings
