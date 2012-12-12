@@ -52,7 +52,9 @@ sudo apt-get -qq install gnome-session sane ssh
 echo "installing LaTeX"
 sudo apt-get -qq install texlive-full texlive-fonts-extra cm-super texlive-latex-extra auctex
 sudo texconfig paper letter
+echo "mktexlsr"
 sudo mktexlsr
+echo "installing non-free-fonts"
 wget http://www.tug.org/fonts/getnonfreefonts/install-getnonfreefonts
 chmod +x install-getnonfreefonts
 sudo ./install-getnonfreefonts
