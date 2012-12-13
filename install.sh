@@ -25,7 +25,7 @@ sudo make install
 cd ..
 cd ubuntu
 sudo cp org-exp-bibtex.el /usr/share/emacs/site-lisp/
-sudo apt-get install bibtex2html
+sudo apt-get install -qq bibtex2html
 cp dotemacs ~/.emacs
 
 # R
@@ -63,7 +63,7 @@ sudo mktexlsr
 sudo apt-get -qq install ttf-mscorefonts-installer
 
 # Pandoc
-sudo apt-get install pandoc
+sudo apt-get -qq install pandoc
 
 # python scientific stack
 echo "installing python scientific stack"
