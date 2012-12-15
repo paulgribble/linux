@@ -36,6 +36,10 @@ sudo apt-get -qq install r-base ess
 echo "installing development tools"
 sudo apt-get -qq install ntp build-essential gtk2-engines-pixbuf
 
+# kernel source
+echo "installing kernel source"
+sudo apt-get -qq install linux-headers-$(uname -r)
+
 # octave
 echo "installing octave"
 sudo apt-get -qq install octave
