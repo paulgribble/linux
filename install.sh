@@ -75,26 +75,15 @@ sudo apt-get -qq install python-sip pyqt4-dev-tools
 sudo apt-get -qq install python-numpy python-scipy python-matplotlib ipython ipython-doc ipython-notebook ipython-qtconsole python-sympy python-virtualenv python-dev python-pip
 sudo apt-get -qq install python-pygame
 
-# update reps and upgrade any leftovers
-sudo apt-get update
-sudo apt-get upgrade
+# tor
+sudo apt-get -qq install tor
 
 # laptop?
 # sudo apt-get install laptop-mode-tools
 
-# OTHER
-
-#sudo add-apt-repository ppa:zedtux/naturalscrolling
-#sudo apt-get update
-#sudo apt-get install naturalscrolling
-
-#sudo apt-get install xmonad dmenu xmobar xscreensaver
-#cp xmobarrc ~/.xmobarrc
-#mkdir ~/.xmonad
-#cp xmonad.hs ~/.xmonad/xmonad.hs
-
-#sudo gem install mime
-#sudo gem install ruby-gmail
+# update reps and upgrade any leftovers
+sudo apt-get -qq update
+sudo apt-get -qq upgrade
 
 echo "done"
 
