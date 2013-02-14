@@ -50,7 +50,7 @@ sudo apt-get -qq install libgsl0-dev plotutils gnuplot
 
 # misc system utils
 echo "installing system utils"
-sudo apt-get -qq install gnome-session sane ssh
+sudo apt-get -qq install gnome-session sane ssh indicator-multiload wireshark
 
 # LaTeX
 echo "installing LaTeX"
