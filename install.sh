@@ -78,6 +78,10 @@ sudo apt-get -qq install python-pygame
 # tor
 sudo apt-get -qq install tor
 
+# fonts
+sudo apt-get -qq install xfonts-100dpi xfonts-75dpi
+echo "you will need to logout and log back in to activate new fonts"
+
 # laptop?
 # sudo apt-get install laptop-mode-tools
 
