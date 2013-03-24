@@ -10,6 +10,14 @@ sudo apt-get -qq install git
 git config --global user.name "Paul Gribble"
 git config --global user.email paul@gribblelab.org
 
+# development
+echo "installing development tools"
+sudo apt-get -qq install build-essential
+
+# kernel source
+echo "installing kernel headers"
+sudo apt-get -qq install linux-headers-$(uname -r)
+
 # emacs
 echo "installing emacs"
 sudo apt-get -qq install emacs emacs-goodies-el texinfo
@@ -32,13 +40,9 @@ cp dotemacs ~/.emacs
 echo "installing R"
 sudo apt-get -qq install r-base ess
 
-# development
-echo "installing development tools"
-sudo apt-get -qq install ntp build-essential gtk2-engines-pixbuf
-
-# kernel source
-echo "installing kernel source"
-sudo apt-get -qq install linux-headers-$(uname -r)
+# misc
+echo "installing ntp and gtk2-engines-pixbuf"
+sudo apt-get -qq install ntp gtk2-engines-pixbuf
 
 # octave
 echo "installing octave"
