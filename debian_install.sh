@@ -6,7 +6,7 @@ apt-get -qq install emacs emacs-goodies-el
 # org-mode
 echo ""
 echo "installing orgmode"
-apt-get -qq install orgmode
+apt-get -qq install org-mode
 
 # developer tools
 echo ""
