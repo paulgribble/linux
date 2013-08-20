@@ -3,6 +3,11 @@ echo ""
 echo "installing emacs"
 apt-get -qq install emacs emacs-goodies-el
 
+# firefox
+echo ""
+echo "installing firefox"
+apt-get -qq install firefox
+
 # developer tools
 echo ""
 echo "installing developer tools"
