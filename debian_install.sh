@@ -9,6 +9,9 @@ echo "installing firefox"
 apt-get -qq remove iceweasel
 echo "deb http://packages.linuxmint.com debian import" >> /etc/apt/sources.list
 gpg --keyserver pgp.mit.edu --recv-keys 3EE67F3D0FF405B2
+gpg --export 3EE67F3D0FF405B2 > 3EE67F3D0FF405B2.gpg
+apt-key add ./3EE67F3D0FF405B2.gpg
+rm ./3EE67F3D0FF405B2.gpg
 apt-get -qq update
 apt-get -qq install firefox
 
