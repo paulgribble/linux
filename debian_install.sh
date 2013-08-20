@@ -6,6 +6,10 @@ apt-get -qq install emacs emacs-goodies-el
 # firefox
 echo ""
 echo "installing firefox"
+apt-get -qq remove iceweasel
+echo "deb http://packages.linuxmint.com debian import" >> /etc/apt/sources.list
+gpg --keyserver pgp.mit.edu --recv-keys 3EE67F3D0FF405B2
+apt-get -qq update
 apt-get -qq install firefox
 
 # developer tools
