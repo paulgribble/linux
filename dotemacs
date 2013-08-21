@@ -1,13 +1,23 @@
-;; emacs local site-lisp
-(setq load-path (cons "/usr/share/emacs/site-lisp/org" load-path))
+;; emacss local site-lisp
+(add-to-list 'load-path "/usr/share/emacs/site-lisp")
+
+(setq debug-on-error t)
+(setq eval-expression-print-length nil)
+
+;; reftex
+(require 'reftex)
+(add-hook 'LaTeX-mode-hook 'turn-on-reftex)   ; with AUCTeX LaTeX mode
+(add-hook 'latex-mode-hook 'turn-on-reftex)   ; with Emacs latex mode
 
 ;; wrap at window edge
-(setq visual-line-mode t)
+(setq global-visual-line-mode t)
 
 ;; org-mode
 (require 'org-install)
 (require 'org-latex)
+(require 'org-publish)
 (require 'htmlize)
+;;(setq org-export-html-postamble nil)
 
 ;; active Babel languages
 (org-babel-do-load-languages
@@ -24,15 +34,14 @@
 (defun my-org-confirm-babel-evaluate (lang body)
            (not (string= lang "R")))  ; don't ask for R
 (setq org-confirm-babel-evaluate 'my-org-confirm-babel-evaluate)
-
-;; csv-mode
-(add-to-list 'auto-mode-alist '("\\.[Cc][Ss][Vv]\\'" . csv-mode))
-(autoload 'csv-mode "csv-mode"
- "Major mode for editing comma-separated value files." t)
+(setq org-src-fontify-natively t)
 
 ;; AUCTeX
-(require 'tex-site)
+;;(require 'tex-site)
 (setq TeX-auto-save t)
 (setq TeX-parse-self t)
 (setq-default TeX-master nil)
+
+;; desktop save mode
+(desktop-save-mode 1)
 
