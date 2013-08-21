@@ -118,6 +118,11 @@ echo "update & upgrade"
 sudo apt-get -qq update
 sudo apt-get -qq upgrade
 
+# managed network
+echo ""
+echo "configuring network interface to be managed"
+sudo echo -e "[main]\nplugins=ifupdown,keyfile\n\n[ifupdown]\nmanaged=true" > /etc/NetworkManager/NetworkManager.conf
+
 # done
 echo ""
 echo "DONE!"
