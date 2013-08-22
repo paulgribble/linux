@@ -118,6 +118,12 @@ echo "update & upgrade"
 sudo apt-get -qq update
 sudo apt-get -qq upgrade
 
+# remove rpcbind and sshd, we don't need them
+echo ""
+echo "removing rpcbind and openssh-server"
+sudo apt-get -qq remove rpcbind
+sudo apt-get -qq remove openssh-server
+
 # managed network
 echo ""
 echo "configuring network interface to be managed"
