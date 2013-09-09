@@ -13,6 +13,9 @@
 # if you already have sudo priviledges on your username you
 # can skip steps 1, 2, 3
 
+echo "setting /etc/apt/sources.list"
+sudo echo -e "deb http://mirror.csclub.uwaterloo.ca/debian/ wheezy main contrib\ndeb-src http://mirror.csclub.uwaterloo.ca/debian/ wheezy main contrib\ndeb http://security.debian.org/ wheezy/updates main contrib\ndeb-src http://security.debian.org/ wheezy/updates main contrib\ndeb http://mirros.csclub.uwaterloo.ca/debian/ wheezy-updates main contrib\ndeb-src http://mirror.csclub.uwaterloo.ca/debian/ wheezy-updates main contrib" > /etc/apt/sources.list
+
 echo "updating"
 sudo apt-get -qq update
 sudo apt-get -qq upgrade
