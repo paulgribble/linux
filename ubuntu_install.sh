@@ -22,8 +22,8 @@ sudo apt-get -qq upgrade
 echo ""
 echo "installing git"
 sudo apt-get -qq install git
-git config --global user.name "Paul Gribble"
-git config --global user.email paul@gribblelab.org
+#git config --global user.name "YOUR_NAME_GOES_HERE"
+#git config --global user.email YOUR_EMAIL_ADDRESS_GOES_HERE
 
 # development
 echo ""
