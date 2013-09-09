@@ -87,7 +87,9 @@ getnonfreefonts garamond
 mktexlsr
 sudo apt-get -qq install ttf-mscorefonts-installer
 sudo apt-get -qq install xfonts-100dpi xfonts-75dpi
-#sudo ln -s /etc/fonts/conf.avail/10-autohint.conf /etc/fonts/conf.d/
+echo "enabling autohinting and sub-pixel smoothing"
+sudo ln -s /etc/fonts/conf.avail/10-autohint.conf /etc/fonts/conf.d/
+sudo ln -s /etc/fonts/conf.avail/10-sub-pixel-rgb.conf /etc/fonts/conf.d/
 
 # python scientific stack
 echo ""
