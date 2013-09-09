@@ -14,9 +14,8 @@
 # can skip steps 1, 2, 3
 
 echo "setting /etc/apt/sources.list"
-echo -e "deb http://mirror.csclub.uwaterloo.ca/debian/ wheezy main contrib\ndeb-src http://mirror.csclub.uwaterloo.ca/debian/ wheezy main contrib\ndeb http://security.debian.org/ wheezy/updates main contrib\ndeb-src http://security.debian.org/ wheezy/updates main contrib\ndeb http://mirros.csclub.uwaterloo.ca/debian/ wheezy-updates main contrib\ndeb-src http://mirror.csclub.uwaterloo.ca/debian/ wheezy-updates main contrib" > tmp
-sudo mv tmp /etc/apt/sources.list
-sudo rm tmp
+sudo mv /etc/apt/sources.list /etc/apt/sources.list.old
+sudo mv debian.sources.list /etc/apt/sources.list
 
 echo "updating"
 sudo apt-get -qq update
