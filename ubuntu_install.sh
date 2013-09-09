@@ -25,6 +25,11 @@ sudo apt-get -qq install git
 #git config --global user.name "YOUR_NAME_GOES_HERE"
 #git config --global user.email YOUR_EMAIL_ADDRESS_GOES_HERE
 
+# gnome fallback
+echo ""
+echo "installing gnome-session-fallback"
+sudo apt-get -qq install gnome-session-fallback
+
 # development
 echo ""
 echo "installing development tools"
