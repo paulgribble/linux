@@ -96,7 +96,7 @@ sudo apt-get -qq install xfonts-100dpi xfonts-75dpi
 echo ""
 echo "installing python scientific stack"
 sudo apt-get -qq install python-sip pyqt4-dev-tools
-sudo apt-get -qq install python-numpy python-scipy python-matplotlib ipython ipython-doc ipython-notebook ipython-qtconsole python-sympy python-virtualenv python-dev python-pip
+sudo apt-get -qq install python-numpy python-scipy python-matplotlib ipython ipython-doc ipython-notebook ipython-qtconsole python-sympy python-pandas python-virtualenv python-dev python-pip
 sudo apt-get -qq install python-pygame
 
 # tor
@@ -108,7 +108,7 @@ sudo apt-get -qq install tor
 echo ""
 echo "generating ssh key"
 echo "just hit <ENTER> when asked questions, until the procedure stops"
-/bin/su - scicomp -c "ssh-keygen -t rsa"
+#/bin/su - scicomp -c "ssh-keygen -t rsa"
 
 # laptop?
 while true; do
