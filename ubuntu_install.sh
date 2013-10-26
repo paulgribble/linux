@@ -120,6 +120,11 @@ while true; do
     esac
 done
 
+# libjpeg62
+echo ""
+echo "libjpeg62"
+sudo apt-get -qq install libjpeg62
+
 # update reps and upgrade any leftovers
 echo ""
 echo "update & upgrade"
