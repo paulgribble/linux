@@ -51,7 +51,7 @@ cp dotemacs ~/.emacs
 # org-mode
 echo ""
 echo "installing orgmode"
-apt-get -qq install org-mode
+sudo apt-get -qq install org-mode
 
 # R
 echo ""
