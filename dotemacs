@@ -12,6 +12,11 @@
 ;; wrap at window edge
 (setq global-visual-line-mode t)
 
+;; no menu bar or toolbar or scroll bar
+(menu-bar-mode -1)
+(toggle-scroll-bar -1)
+(tool-bar-mode -1)
+
 ;; org-mode
 (require 'org-install)
 (require 'org-latex)
