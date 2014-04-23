@@ -159,7 +159,7 @@ sudo apt-get install google-chrome-stable
 echo ""
 echo "adding aliases to .bashrc"
 echo $'\n# alias\nalias ll="/bin/ls -rtFlG"' >> ~/.bashrc
-echo $'alias screenres-"xrandr -s 1280x960"' >> ~/.bashrc
+echo $'alias screenres-"xrandr -s 1280x960" ; killall -SIGUSR1 conky' >> ~/.bashrc
 
 # done
 echo ""
