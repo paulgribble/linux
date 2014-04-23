@@ -145,6 +145,19 @@ echo ""
 echo "configuring network interface to be managed"
 sudo echo -e "[main]\nplugins=ifupdown,keyfile\n\n[ifupdown]\nmanaged=true" > /etc/NetworkManager/NetworkManager.conf
 
+# install google-chrome
+echo ""
+echo "installing google-chrome"
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
+sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+sudo apt-get update 
+sudo apt-get install google-chrome-stable
+
+# add a nice alias to .bashrc
+echo ""
+echo "adding aliases to .bashrc"
+echo $'\n# alias\nalias ll="/bin/ls -rtFlG"' >> ~/.bashrc
+
 # done
 echo ""
 echo "DONE!"
