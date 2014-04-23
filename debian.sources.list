@@ -1,0 +1,8 @@
+deb http://mirror.csclub.uwaterloo.ca/debian/ wheezy main contrib
+deb-src http://mirror.csclub.uwaterloo.ca/debian/ wheezy main contrib
+
+deb http://security.debian.org/ wheezy/updates main contrib
+deb-src http://security.debian.org/ wheezy/updates main contrib
+
+deb http://mirror.csclub.uwaterloo.ca/debian/ wheezy-updates main contrib
+deb-src http://mirror.csclub.uwaterloo.ca/debian/ wheezy-updates main contrib
