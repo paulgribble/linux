@@ -15,7 +15,7 @@
 
 echo "setting /etc/apt/sources.list"
 sudo mv /etc/apt/sources.list /etc/apt/sources.list.old
-sudo cp debian.sources.list /etc/apt/sources.list
+sudo mv debian.sources.list /etc/apt/sources.list
 
 echo "updating"
 sudo apt-get -qq update
@@ -25,8 +25,6 @@ sudo apt-get -qq upgrade
 echo ""
 echo "installing git"
 sudo apt-get -qq install git
-git config --global user.name "Paul Gribble"
-git config --global user.email paul@gribblelab.org
 
 # developer tools
 echo ""
@@ -94,20 +92,11 @@ sudo ln -s /etc/fonts/conf.avail/10-autohint.conf /etc/fonts/conf.d/
 sudo ln -s /etc/fonts/conf.avail/10-sub-pixel-rgb.conf /etc/fonts/conf.d/
 
 # python scientific stack
-#echo ""
-#echo "installing python scientific stack"
-#sudo apt-get -qq install python-sip pyqt4-dev-tools
-#sudo apt-get -qq install python-numpy python-scipy python-matplotlib ipython ipython-doc ipython-notebook ipython-qtconsole python-sympy python-virtualenv python-dev python-pip
-#sudo apt-get -qq install python-pygame
-
-# install anaconda python stack
 echo ""
-echo "installing anaconda"
-wget http://repo.continuum.io/archive/Anaconda-1.9.2-Linux-x86_64.sh
-bash Anaconda-1.9.2-Linux-x86_64.sh
-conda update conda
-conda update anaconda
-conda update ipython
+echo "installing python scientific stack"
+sudo apt-get -qq install python-sip pyqt4-dev-tools
+sudo apt-get -qq install python-numpy python-scipy python-matplotlib ipython ipython-doc ipython-notebook ipython-qtconsole python-sympy python-virtualenv python-dev python-pip
+sudo apt-get -qq install python-pygame
 
 # tor
 echo ""
@@ -147,21 +136,6 @@ echo ""
 echo "configuring network interface to be managed"
 sudo echo -e "[main]\nplugins=ifupdown,keyfile\n\n[ifupdown]\nmanaged=true" > /etc/NetworkManager/NetworkManager.conf
 
-# install google-chrome
-echo ""
-echo "installing google-chrome"
-wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
-sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
-sudo apt-get update 
-sudo apt-get install google-chrome-stable
-
-# add some aliases to .bashrc
-echo ""
-echo "adding aliases to .bashrc"
-echo $'\n# alias\nalias ll="/bin/ls -rtFlG"' >> ~/.bashrc
-echo $'alias screenres-"xrandr -s 1280x960" ; killall -SIGUSR1 conky' >> ~/.bashrc
-
 # done
 echo ""
 echo "DONE!"
-
