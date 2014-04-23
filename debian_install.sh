@@ -15,7 +15,7 @@
 
 echo "setting /etc/apt/sources.list"
 sudo mv /etc/apt/sources.list /etc/apt/sources.list.old
-sudo mv debian.sources.list /etc/apt/sources.list
+sudo cp debian.sources.list /etc/apt/sources.list
 
 echo "updating"
 sudo apt-get -qq update
@@ -25,6 +25,8 @@ sudo apt-get -qq upgrade
 echo ""
 echo "installing git"
 sudo apt-get -qq install git
+git config --global user.name "Paul Gribble"
+git config --global user.email paul@gribblelab.org
 
 # developer tools
 echo ""
