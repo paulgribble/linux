@@ -155,10 +155,11 @@ sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /et
 sudo apt-get update 
 sudo apt-get install google-chrome-stable
 
-# add a nice alias to .bashrc
+# add some aliases to .bashrc
 echo ""
 echo "adding aliases to .bashrc"
 echo $'\n# alias\nalias ll="/bin/ls -rtFlG"' >> ~/.bashrc
+echo $'alias screenres-"xrandr -s 1280x960"' >> ~/.bashrc
 
 # done
 echo ""
