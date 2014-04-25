@@ -93,11 +93,20 @@ sudo apt-get -qq install ttf-mscorefonts-installer
 sudo apt-get -qq install xfonts-100dpi xfonts-75dpi
 
 # python scientific stack
+#echo ""
+#echo "installing python scientific stack"
+#sudo apt-get -qq install python-sip pyqt4-dev-tools
+#sudo apt-get -qq install python-numpy python-scipy python-matplotlib ipython ipython-doc ipython-notebook ipython-qtconsole python-sympy python-pandas python-virtualenv python-dev python-pip
+#sudo apt-get -qq install python-pygame
+
+# install anaconda python stack
 echo ""
-echo "installing python scientific stack"
-sudo apt-get -qq install python-sip pyqt4-dev-tools
-sudo apt-get -qq install python-numpy python-scipy python-matplotlib ipython ipython-doc ipython-notebook ipython-qtconsole python-sympy python-pandas python-virtualenv python-dev python-pip
-sudo apt-get -qq install python-pygame
+echo "installing anaconda"
+wget http://repo.continuum.io/archive/Anaconda-1.9.2-Linux-x86_64.sh
+bash Anaconda-1.9.2-Linux-x86_64.sh
+conda update conda
+conda update anaconda
+conda update ipython
 
 # tor
 echo ""
