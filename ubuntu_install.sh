@@ -22,8 +22,8 @@ sudo apt-get -qq upgrade
 echo ""
 echo "installing git"
 sudo apt-get -qq install git
-#git config --global user.name "YOUR_NAME_GOES_HERE"
-#git config --global user.email YOUR_EMAIL_ADDRESS_GOES_HERE
+git config --global user.name "YOUR_NAME_GOES_HERE"
+git config --global user.email YOUR_EMAIL_ADDRESS_GOES_HERE
 
 # gnome fallback
 echo ""
@@ -92,13 +92,6 @@ sudo mktexlsr
 sudo apt-get -qq install ttf-mscorefonts-installer
 sudo apt-get -qq install xfonts-100dpi xfonts-75dpi
 
-# python scientific stack
-#echo ""
-#echo "installing python scientific stack"
-#sudo apt-get -qq install python-sip pyqt4-dev-tools
-#sudo apt-get -qq install python-numpy python-scipy python-matplotlib ipython ipython-doc ipython-notebook ipython-qtconsole python-sympy python-pandas python-virtualenv python-dev python-pip
-#sudo apt-get -qq install python-pygame
-
 # install anaconda python stack
 echo ""
 echo "installing anaconda"
@@ -112,22 +105,6 @@ conda update ipython
 echo ""
 echo "installing tor"
 sudo apt-get -qq install tor
-
-# generate ssh key
-echo ""
-echo "generating ssh key"
-echo "just hit <ENTER> when asked questions, until the procedure stops"
-#/bin/su - scicomp -c "ssh-keygen -t rsa"
-
-# laptop?
-while true; do
-    read -p "install laptop-mode-tools? (y/n) " yn
-    case $yn in
-        [Yy]* ) echo ""; echo "installing laptop-mode-tools"; sudo apt-get -qq install laptop-mode-tools; break;;
-        [Nn]* ) exit;;
-        * ) echo "please answer y or n.";;
-    esac
-done
 
 # libjpeg62
 echo ""
@@ -152,6 +129,16 @@ sudo apt-get install google-chrome-stable
 echo ""
 echo "adding aliases to .bashrc"
 echo $'\n# alias\nalias ll="/bin/ls -rtFlG"' >> ~/.bashrc
+
+# laptop?
+while true; do
+    read -p "install laptop-mode-tools? (y/n) " yn
+    case $yn in
+        [Yy]* ) echo ""; echo "installing laptop-mode-tools"; sudo apt-get -qq install laptop-mode-tools; break;;
+        [Nn]* ) exit;;
+        * ) echo "please answer y or n.";;
+    esac
+done
 
 # done
 echo ""
