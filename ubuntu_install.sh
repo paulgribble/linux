@@ -102,9 +102,8 @@ echo ""
 echo "installing anaconda"
 wget http://repo.continuum.io/archive/Anaconda-1.9.2-Linux-x86_64.sh
 bash Anaconda-1.9.2-Linux-x86_64.sh
-conda update conda
-conda update anaconda
-conda update ipython
+~/anaconda/bin/./conda update conda
+~/anaconda/bin/./conda update ipython
 
 # tor
 echo ""
