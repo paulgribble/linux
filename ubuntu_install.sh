@@ -30,6 +30,11 @@ echo ""
 echo "installing gnome-session-fallback"
 sudo apt-get -qq install gnome-session-fallback
 
+# unity tweak tool
+echo ""
+echo "installing unity tweak tool"
+sudo apt-get -qq install unity-tweak-tool
+
 # development
 echo ""
 echo "installing development tools"
