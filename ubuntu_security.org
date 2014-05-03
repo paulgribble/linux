@@ -1,0 +1,194 @@
+#+STARTUP: showall
+#+TITLE: Some steps to secure an Ubuntu desktop machine
+#+OPTIONS: toc:nil num:nil email:nil
+#+LATEX_CLASS_OPTIONS: [10pt, letterpaper]
+#+LATEX_HEADER: \usepackage[protrusion=true,expansion=true]{microtype}
+#+LATEX_HEADER: \usepackage{palatino}
+#+LATEX_HEADER: \usepackage[T1]{fontenc}
+#+LATEX_HEADER: \usepackage{hyperref} \urlstyle{sf}
+#+LATEX_HEADER: \usepackage[margin=1.0in]{geometry}
+#+LATEX_HEADER: \setlength{\parskip}{1ex}
+#+LATEX_HEADER: \makeatletter \def\verbatim{\small\@verbatim \frenchspacing\@vobeyspaces \@xverbatim} \makeatother
+
+* ubuntu basic security
+
+also see:
+
+[[https://wiki.ubuntu.com/BasicSecurity][BasicSecurity - Ubuntu Wiki]]
+
+* passwords
+
+select user passwords that are long, complex, and resistant to dictionary attacks
+
+** ssh password-less login
+
+On machines on which you want to access your new machine, generate a public/private key pair:
+
+#+BEGIN_SRC bash
+ssh-keygen -t rsa
+#+END_SRC
+
+and just hit =<ENTER>= at the various prompts to accept the defaults
+
+then use =ssh-copy-id= to copy your public key to the new machine in the =~/.ssh/authorized_keys= file
+
+* setup sudo permissions for your username
+
+edit the sudoers file (=sudo visudo=) and add (assuming your username
+is =plg=):
+
+#+BEGIN_SRC txt
+plg ALL=(ALL:ALL) ALL # put this in the "User privilege specification" section
+#+END_SRC
+
+* sshd config
+
+edit =/etc/ssh/sshd_config= and make sure these lines exist to secure SSH:
+
+#+BEGIN_SRC text
+# Only allow version 2 communications, version 1 has known vulnerabilities
+Protocol 2
+# Disable root login over ssh
+PermitRootLogin no
+# Load authorized keys files from a users home directory
+AuthorizedKeysFile  %h/.ssh/authorized_keys
+# Don't allow empty passwords to be used to authenticate
+PermitEmptyPasswords no
+# Disable password auth, you must use ssh keys
+PasswordAuthentication no
+#+END_SRC
+
+then restart the sshd:
+
+#+BEGIN_SRC bash
+sudo service ssh restart
+#+END_SRC
+
+* update everything and reboot
+
+#+BEGIN_SRC bash
+sudo apt-get update
+sudo apt-get install build-essential ntp
+sudo apt-get upgrade
+sudo reboot
+#+END_SRC
+
+* iptables and Fail2Ban
+** Fail2Ban
+
+#+BEGIN_SRC bash
+sudo apt-get install fail2ban
+#+END_SRC
+
+Open up the fail2ban config (=/etc/fail2ban/jail.conf=) and change the
+ban time, destemail, and maxretry:
+
+#+BEGIN_SRC text
+[DEFAULT]
+ignoreip = 127.0.0.1/8
+bantime  = 3600
+maxretry = 2
+destemail = ubuntu@yourdomain.com
+action = %(action_mw)s
+
+[ssh]
+
+enabled  = true
+port     = ssh
+filter   = sshd
+logpath  = /var/log/auth.log
+maxretry = 2
+#+END_SRC 
+
+now restart fail2ban
+
+#+BEGIN_SRC bash
+sudo service fail2ban restart
+#+END_SRC
+
+** iptables rules
+
+Here is an example of iptables rules, opening up port 80 and 443 for
+http/https and port 22 (ssh). We also allow ping and we also log all
+denied calls and reject all else. Be sure to add the rules to open up
+any other ports you may need for other services you run on the
+machine. The rules are in =/etc/iptables.up.rules=:
+
+#+BEGIN_SRC text
+*filter
+
+# Accepts all established inbound connections
+ -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+
+# Allows all outbound traffic
+# You could modify this to only allow certain traffic
+ -A OUTPUT -j ACCEPT
+
+# Allows HTTP and HTTPS connections from anywhere (the normal ports for websites)
+ -A INPUT -p tcp --dport 443 -j ACCEPT
+ -A INPUT -p tcp --dport 80 -j ACCEPT
+
+# Allows SSH connections for script kiddies
+# THE -dport NUMBER IS THE SAME ONE YOU SET UP IN THE SSHD_CONFIG FILE
+ -A INPUT -p tcp -m state --state NEW --dport 22 -j ACCEPT
+
+# Now you should read up on iptables rules and consider whether ssh access
+# for everyone is really desired.
+# Most likely you will only allow access from certain IPs
+
+# Allow ping
+ -A INPUT -p icmp -m icmp --icmp-type 8 -j ACCEPT
+
+# log iptables denied calls (access via 'dmesg' command)
+ -A INPUT -m limit --limit 5/min -j LOG --log-prefix "iptables denied: " --log-level 7
+
+# Reject all other inbound - default deny unless explicitly allowed policy:
+ -A INPUT -j REJECT
+ -A FORWARD -j REJECT
+
+COMMIT
+#+END_SRC
+
+to load the rules into iptables:
+
+#+BEGIN_SRC bash
+sudo iptables-restore < /etc/iptables.up.rules
+#+END_SRC
+
+and make sure it loads on boot by putting it into the if-up scripts
+(=/etc/network/if-up.d/iptables=):
+
+#+BEGIN_SRC text
+#!/bin/sh
+iptables-restore /etc/iptables.up.rules
+#+END_SRC
+
+and make it executable:
+
+#+BEGIN_SRC bash
+chmod +x /etc/network/if-up.d/iptables
+#+END_SRC
+
+probably should reboot:
+
+#+BEGIN_SRC bash
+sudo reboot
+#+END_SRC
+
+* read only shared memory
+
+edit =/etc/fstab= to include:
+
+#+BEGIN_SRC text
+tmpfs     /dev/shm     tmpfs     defaults,ro     0     0
+#+END_SRC
+
+and reboot
+
+#+BEGIN_SRC bash
+sudo reboot
+#+END_SRC
+
+
+
+
