@@ -1,0 +1,11 @@
+#+STARTUP: showall
+#+TITLE: Handy Ubuntu Commands
+#+OPTIONS: toc:nil num:nil email:nil author:nil
+
+* Networking
+
+What processes are listening to what ports?
+#+BEGIN_SRC bash
+sudo netstat -plnt
+#+END_SRC
+
