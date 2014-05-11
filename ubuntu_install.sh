@@ -106,9 +106,9 @@ bash Anaconda-1.9.2-Linux-x86_64.sh
 ~/anaconda/bin/./conda update ipython
 
 # tor
-echo ""
-echo "installing tor"
-sudo apt-get -qq install tor
+#echo ""
+#echo "installing tor"
+#sudo apt-get -qq install tor
 
 # libjpeg62
 echo ""
