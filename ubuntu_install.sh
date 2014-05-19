@@ -22,13 +22,8 @@ sudo apt-get -qq upgrade
 echo ""
 echo "installing git"
 sudo apt-get -qq install git
-git config --global user.name "YOUR_NAME_GOES_HERE"
-git config --global user.email YOUR_EMAIL_ADDRESS_GOES_HERE
-
-# gnome fallback
-echo ""
-echo "installing gnome-session-fallback"
-sudo apt-get -qq install gnome-session-fallback
+git config --global user.name "Paul Gribble"
+git config --global user.email paul@gribblelab.org
 
 # unity tweak tool
 echo ""
@@ -82,13 +77,14 @@ sudo apt-get -qq install pandoc
 echo ""
 echo "installing LaTeX"
 sudo apt-get -qq install texlive-full texlive-fonts-extra cm-super texlive-latex-extra auctex texinfo
+echo "texconfig paper letter"
 sudo texconfig paper letter
 echo "mktexlsr"
 sudo mktexlsr
 
 # fonts
 echo ""
-echo "installing a bunch of fonts"
+echo "installing some fonts"
 wget http://www.tug.org/fonts/getnonfreefonts/install-getnonfreefonts
 chmod +x install-getnonfreefonts
 sudo ./install-getnonfreefonts
@@ -99,7 +95,7 @@ sudo apt-get -qq install xfonts-100dpi xfonts-75dpi
 
 # install anaconda python stack
 echo ""
-echo "installing anaconda"
+echo "installing anaconda python"
 wget http://repo.continuum.io/archive/Anaconda-1.9.2-Linux-x86_64.sh
 bash Anaconda-1.9.2-Linux-x86_64.sh
 ~/anaconda/bin/./conda update conda
@@ -124,9 +120,9 @@ sudo apt-get -qq upgrade
 # install google-chrome
 echo ""
 echo "installing google-chrome"
-wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
-sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
-sudo apt-get update 
+#wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
+#sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+#sudo apt-get update 
 sudo apt-get -qq install google-chrome-stable
 
 # add some aliases to .bashrc
