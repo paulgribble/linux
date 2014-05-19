@@ -47,6 +47,7 @@ sudo apt-get -qq install emacs emacs-goodies-el
 sudo cp org-exp-bibtex.el /usr/share/emacs/site-lisp/
 sudo apt-get install -qq bibtex2html
 cp dotemacs ~/.emacs
+sudo cp htmlize.el /usr/share/emacs/site-lisp/
 
 # org-mode
 echo ""
