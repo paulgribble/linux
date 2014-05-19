@@ -121,9 +121,9 @@ sudo apt-get -qq upgrade
 # install google-chrome
 echo ""
 echo "installing google-chrome"
-#wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
-#sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
-#sudo apt-get update 
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
+sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+sudo apt-get update 
 sudo apt-get -qq install google-chrome-stable
 
 # add some aliases to .bashrc
