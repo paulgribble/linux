@@ -39,7 +39,7 @@ function install_brews() {
   fi
   echo "shall I add the railwaycat emacsmacport?"
   read RESPONSE
-  if [[ "$RESPONSE == "ok"]]; then
+  if [[ "$RESPONSE" == "ok" ]]; then
     brew tap railwaycat/emacsmacport
     brew install emacs-mac
   else
