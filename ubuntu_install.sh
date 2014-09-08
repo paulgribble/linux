@@ -97,8 +97,8 @@ sudo apt-get -qq install xfonts-100dpi xfonts-75dpi
 # install anaconda python stack
 echo ""
 echo "installing anaconda python"
-wget http://repo.continuum.io/archive/Anaconda-1.9.2-Linux-x86_64.sh
-bash Anaconda-1.9.2-Linux-x86_64.sh
+wget http://repo.continuum.io/archive/Anaconda-2.0.1-Linux-x86_64.sh
+bash Anaconda-2.0.1-Linux-x86_64.sh
 ~/anaconda/bin/./conda update conda
 ~/anaconda/bin/./conda update ipython
 
