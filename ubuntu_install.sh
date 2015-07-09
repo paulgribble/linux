@@ -13,47 +13,6 @@
 # if you already have sudo priviledges on your username you
 # can skip steps 1, 2, 3
 
-echo ""
-echo "updating"
-sudo apt-get -qq update
-sudo apt-get -qq upgrade
-
-# git
-echo ""
-echo "installing git"
-sudo apt-get -qq install git
-git config --global user.name "Paul Gribble"
-git config --global user.email paul@gribblelab.org
-
-# unity tweak tool
-echo ""
-echo "installing unity tweak tool"
-sudo apt-get -qq install unity-tweak-tool
-
-# development
-echo ""
-echo "installing development tools"
-sudo apt-get -qq install build-essential
-
-# kernel source
-echo ""
-echo "installing linux kernel headers"
-sudo apt-get -qq install linux-headers-$(uname -r)
-
-# emacs
-echo "installing emacs"
-sudo apt-get -qq install emacs emacs-goodies-el
-# more emacs stuff
-sudo cp org-exp-bibtex.el /usr/share/emacs/site-lisp/
-sudo apt-get install -qq bibtex2html
-cp dotemacs ~/.emacs
-sudo cp htmlize.el /usr/share/emacs/site-lisp/
-
-# org-mode
-echo ""
-echo "installing orgmode"
-sudo apt-get -qq install org-mode
-
 # R
 echo ""
 echo "installing R"
@@ -97,15 +56,10 @@ sudo apt-get -qq install xfonts-100dpi xfonts-75dpi
 # install anaconda python stack
 echo ""
 echo "installing anaconda python"
-wget http://repo.continuum.io/archive/Anaconda-2.0.1-Linux-x86_64.sh
-bash Anaconda-2.0.1-Linux-x86_64.sh
+wget http://repo.continuum.io/archive/Anaconda-2.3.0-Linux-x86_64.sh
+bash Anaconda-2.3.0-Linux-x86_64.sh
 ~/anaconda/bin/./conda update conda
 ~/anaconda/bin/./conda update ipython
-
-# tor
-#echo ""
-#echo "installing tor"
-#sudo apt-get -qq install tor
 
 # libjpeg62
 echo ""
@@ -118,28 +72,10 @@ echo "update & upgrade"
 sudo apt-get -qq update
 sudo apt-get -qq upgrade
 
-# install google-chrome
-echo ""
-echo "installing google-chrome"
-wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
-sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
-sudo apt-get update 
-sudo apt-get -qq install google-chrome-stable
-
 # add some aliases to .bashrc
 echo ""
 echo "adding aliases to .bashrc"
 echo $'\n# alias\nalias ll="/bin/ls -rtFlG"' >> ~/.bashrc
-
-# laptop?
-while true; do
-    read -p "install laptop-mode-tools? (y/n) " yn
-    case $yn in
-        [Yy]* ) echo ""; echo "installing laptop-mode-tools"; sudo apt-get -qq install laptop-mode-tools; break;;
-        [Nn]* ) exit;;
-        * ) echo "please answer y or n.";;
-    esac
-done
 
 # done
 echo ""
