@@ -9,3 +9,19 @@ What processes are listening to what ports?
 sudo netstat -plnt
 #+END_SRC
 
+* Graphics
+
+CTRL-ALT F1 to switch to text-based mode
+CTRL-ALT F7 to switch back to graphics server
+
+To query the graphics card:
+#+BEGIN_SRC bash
+lspci -vnn | grep -i VGA -A 12
+#+END_SRC
+
+To launch "additional drivers" section from a command-line (for
+example from another machine, ssh'd in using ssh -Y:
+
+#+BEGIN_SRC bash
+sudo software-properties-gtk
+#+END_SRC
