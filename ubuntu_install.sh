@@ -75,7 +75,7 @@ sudo apt-get -qq upgrade
 # add some aliases to .bashrc
 echo ""
 echo "adding aliases to .bashrc"
-echo $'\n# alias\nalias ll="/bin/ls -rtFlG"' >> ~/.bashrc
+echo '\n# alias\nalias ll="/bin/ls -rtFlG"' >> ~/.bashrc
 
 # done
 echo ""
