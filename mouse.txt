@@ -1,0 +1,5 @@
+xinput --list --short
+
+xinput --set-prop "Lenovo ThinkPad USB Laser Mouse" "Device Accel Velocity Scaling" 1
+xinput --set-prop "Lenovo ThinkPad USB Laser Mouse" "Device Accel Profile" -1
+xinput --set-prop "Lenovo ThinkPad USB Laser Mouse" "Device Accel Constant Deceleration" 2
