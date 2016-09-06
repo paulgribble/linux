@@ -1,0 +1,5 @@
+copy font files to ~/.fonts/
+
+sudo fc-cache -f -v
+
+to list fonts: fc-list

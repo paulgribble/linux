@@ -18,11 +18,6 @@ echo ""
 echo "installing R"
 sudo apt-get -qq install r-base ess
 
-# octave
-echo ""
-echo "installing octave"
-sudo apt-get -qq install octave
-
 # gsl, plotting stuff
 echo ""
 echo "installing gsl and plotting stuff"
@@ -52,14 +47,6 @@ sudo getnonfreefonts garamond
 sudo mktexlsr
 sudo apt-get -qq install ttf-mscorefonts-installer
 sudo apt-get -qq install xfonts-100dpi xfonts-75dpi
-
-# install anaconda python stack
-echo ""
-echo "installing anaconda python"
-wget http://repo.continuum.io/archive/Anaconda-2.3.0-Linux-x86_64.sh
-bash Anaconda-2.3.0-Linux-x86_64.sh
-~/anaconda/bin/./conda update conda
-~/anaconda/bin/./conda update ipython
 
 # libjpeg62
 echo ""
