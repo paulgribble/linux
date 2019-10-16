@@ -21,7 +21,7 @@ sudo apt-get -qq install r-base ess
 # gsl, plotting stuff
 echo ""
 echo "installing gsl and plotting stuff"
-sudo apt-get -qq install libgsl0-dev plotutils gnuplot
+sudo apt-get -qq install libgsl-dev plotutils gnuplot
 
 # pandoc document conversion
 echo ""
