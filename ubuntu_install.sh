@@ -26,7 +26,7 @@ sudo apt-get -qq install libgsl-dev plotutils gnuplot
 # pandoc document conversion
 echo ""
 echo "installing pandoc"
-sudo apt-get -qq install pandoc
+sudo apt-get -qq install pandoc pandoc-citeproc pandoc-crossref
 
 # LaTeX
 echo ""
